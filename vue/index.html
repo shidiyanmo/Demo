@@ -1,12 +1,147 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <script src="./vue.js"></script>
-  </head>
-  <body>
-    <div>hello world</div>
 
-  </body
+<!-- <head>
+  <meta charset="utf-8">
+  <title>属性绑定和双向数据绑定</title>
+  <script src="./vue.js"></script>
+</head> -->
+
+
+<head>
+  <meta charset="utf-8">
+  <title>TodoList</title>
+  <script src="./vue.js"></script>
+</head>
+
+<body>
+  <div id="root">
+    <div>
+      <input v-model="inputValue"/>
+      <button>提交</button>
+    </div>
+    <ul>
+      <li>1</li>
+      <li>2</li>
+    </ul>
+  </div>
+  
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        inputValue: "hello"
+      }
+    })
+  </script>
+</body>
+
+
+<!-- <body>
+  <div id="root">
+      <div v-if="show">hello world</div>
+      <button @click="handleClick">toggle</button>
+      <ul>
+        <li v-for="(item, index) of list" :key="index">{{item}}</li>
+      </ul>
+  </div>
+
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        show: true,
+        list: [1,1,3]
+      },
+      methods: {
+        handleClick: function() {
+          this.show = !this.show;
+        }
+      }
+    })
+  
+  </script>
+</body> -->
+
+
+<!-- <body>
+    <div id="root">
+        姓:<input v-model="firstName"/>
+        名:<input v-model="lastName"/>
+        <div>{{fullName}}</div>
+        <label>{{count}}</label>
+    </div>
+
+    <script>
+        new Vue({
+            el: "#root",
+            data: {
+              firstName: '',
+              lastName: '',
+              count: 0
+            },
+            computed: {
+                fullName: function() {
+                    return this.firstName + ' ' + this.lastName
+                }
+            },
+            watch: {
+              fullName: function() {
+                this.count ++
+              }
+              // // firstName: function() {
+              // //   this.count ++
+              // // },
+              // // lastName: function() {
+              // //   this.count ++
+              // }
+            }
+        })  
+    </script>
+
+</body> -->
+
+
+<!-- <body>
+  <div id="root">
+    <div :title="'dell lee ' + title">hello world</div>
+    <input v-model="content"/>
+    <div>{{content}}</div>
+  </div>
+
+  <script>
+    new Vue({
+      el: "#root",
+      data: {
+        title: "this is hello world",
+        content: "this is content"
+      }
+    })
+  </script>
+</body> -->
+
+
+<!--<body>
+      <div id="root">
+        <div @click="handleClick">{{content}}</div>
+      </div>
+  
+      <script>
+          new Vue({
+            el: "#root",
+            data: {
+                content: "hello"
+            },
+            methods: {
+              handleClick: function() {
+                  this.content = "world"
+              }
+            }
+          })
+      </script>
+  
+    </body>
+  -->
+
+
 </html>
