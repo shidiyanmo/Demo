@@ -18,11 +18,10 @@
   <div id="root">
     <div>
       <input v-model="inputValue"/>
-      <button>提交</button>
+      <button @click="handleClick">提交</button>
     </div>
     <ul>
-      <li>1</li>
-      <li>2</li>
+      <li v-for="(item, index) of list" :key="index">{{item}}</li>
     </ul>
   </div>
   
@@ -30,7 +29,14 @@
     new Vue({
       el: "#root",
       data: {
-        inputValue: "hello"
+        inputValue: '',
+        list: []
+      },
+      methods: {
+        handleClick: function() {
+          this.list.push(this.inputValue),
+          this.inputValue = ''
+        }
       }
     })
   </script>
