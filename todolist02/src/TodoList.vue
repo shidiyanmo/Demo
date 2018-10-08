@@ -1,16 +1,12 @@
 <template>
   <div>
-    <!-- <div >
-      <span v-bind:titel="message">
-    鼠标悬停几秒钟查看此处动态绑定的提示信息！
-      </span>
-    </div> -->
     <div>
-      <input v-model="inputValue" />
+      <input v-model="inputValue"  @keyup.enter="handleSubmit"/>
       <button @click="handleSubmit">提交</button>
     </div>
     <ul>
-      <todo-item v-for="(item, index) of list" :content="item" :index="index" :key="index"  @delete_one="handleDelete"></todo-item>
+      <todo-item v-for="(item, index) of list" :index="index" :key="index" :content="item" @delete_one="handleDelete">
+      </todo-item>
     </ul>
   </div>
 </template>
@@ -39,6 +35,5 @@ export default {
 }
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
+<style>
 </style>
